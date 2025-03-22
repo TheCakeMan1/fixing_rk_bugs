@@ -1,0 +1,27 @@
+diff --git a/export.py b/export.py
+index 3ecb353b..0ff37c79 100644
+--- a/export.py
++++ b/export.py
+@@ -7,6 +7,7 @@ Format                      | `export.py --include`         | Model
+ PyTorch                     | -                             | yolov5s.pt
+ TorchScript                 | `torchscript`                 | yolov5s.torchscript
+ ONNX                        | `onnx`                        | yolov5s.onnx
++Rknn                        | `rknn`                        | yolov5s.rknn
+ OpenVINO                    | `openvino`                    | yolov5s_openvino_model/
+ TensorRT                    | `engine`                      | yolov5s.engine
+ CoreML                      | `coreml`                      | yolov5s.mlmodel
+@@ -22,12 +23,13 @@ Requirements:
+     $ pip install -r requirements.txt coremltools onnx onnx-simplifier onnxruntime-gpu openvino-dev tensorflow  # GPU
+ 
+ Usage:
+-    $ python export.py --weights yolov5s.pt --include torchscript onnx openvino engine coreml tflite ...
++    $ python export.py --weights yolov5s.pt --include torchscript onnx rknn openvino engine coreml tflite ...
+ 
+ Inference:
+     $ python detect.py --weights yolov5s.pt                 # PyTorch
+                                  yolov5s.torchscript        # TorchScript
+                                  yolov5s.onnx               # ONNX Runtime or OpenCV DNN with --dnn
++                                 yolov5s.rknn               # Model for RockChip npu
+                                  yolov5s_openvino_model     # OpenVINO
+                                  yolov5s.engine             # TensorRT
+                                  yolov5s.mlmodel            # CoreML (macOS-only)

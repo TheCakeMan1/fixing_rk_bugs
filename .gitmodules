@@ -1,3 +1,6 @@
 [submodule "ffmpeg"]
 	path = ffmpeg
 	url = https://github.com/TheCakeMan1/ffmpeg-rockchip
+[submodule "npu/yolov5"]
+	path = npu/yolov5
+	url = https://github.com/ultralytics/yolov5
